@@ -38,18 +38,13 @@ const Notes = () => {
 
   const noteCollection = notes.map(note => <NoteItem note={note} key={note.id}/>)
 
-  const newNoteHandler = () => {
-    setIsOpen(true)
-  }
-  
   const cancelHandler = () => {
     setIsOpen(false)
   }
   return (
     <div>
-    { !isOpen && <button className="btn btn-secondary" onClick={newNoteHandler}>Add New Note</button>}
+    { !isOpen && <button className="btn btn-secondary" onClick={() => setIsOpen(true)}>Add New Note</button>}
     { isOpen && <AddNewNote onCancel={cancelHandler} onNewNote={addNewNote} />}
-    
     
     <br/>
     <div className="row">
