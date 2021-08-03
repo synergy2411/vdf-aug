@@ -1,24 +1,31 @@
-import NoteDate from './NoteDate/NoteDate';
+
+import NoteItem from './NoteItem/NoteItem';
 
 const notes = () => {
-    const note = {
-        id : 1,
-        title : "shopping",
-        createdAt : new Date("Dec 21, 2019")
-    }
-    
+  console.log("Notes.js")
+  const notes = [
+    {
+      id: 1,
+      title: "shopping",
+      amount : 12.90,
+      createdAt: new Date("Dec 21, 2019"),
+    },
+    {
+      id: 2,
+      title: "grocery",
+      amount : 10.00,
+      createdAt: new Date("Jan 26, 2020"),
+    },
+  ];
+
+  const theParentFunc = (data) => {
+    console.log("[THE PARENT FUNCTION]", data)
+  }
+
   return (
     <div className="row">
-      <div className="col-sm-4 col-md-4">
-        <div className="card">
-          <div className="card-header">
-            <h6 className="text-center">{note.title.toUpperCase()}</h6>
-          </div>
-          <div className="card-body">
-            <NoteDate noteDate = {note.createdAt}/>
-          </div>
-        </div>
-      </div>
+      <NoteItem note={notes[0]} onCallParent={theParentFunc} />
+      <NoteItem note={notes[1]} onCallParent={theParentFunc}/>
     </div>
   );
 };
