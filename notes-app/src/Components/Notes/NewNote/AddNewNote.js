@@ -35,6 +35,9 @@ const AddNewNote = (props) => {
         <div className="row">
             <div className="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
                 <div className="card">
+                    <div className="card-header">
+                        <h4 className="text-center">Add New Note</h4>
+                    </div>
                     <div className="card-body">
                         <form onSubmit = {submitHandler}>
                         {/* Title */}
@@ -65,7 +68,16 @@ const AddNewNote = (props) => {
                                     className="form-control"/>
                             </div>
                             <div className="form-group">
-                                <input type="submit" />
+                                <div className="row">
+                                    <div className="col-sm-6 col-md-6">
+                                        <input type="submit" className="btn btn-secondary btn-block"/>
+                                    </div>
+                                    <div className="col-sm-6 col-md-6">
+                                        <button 
+                                            onClick={props.onCancel}
+                                            className="btn btn-warning btn-block">Cancel</button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>

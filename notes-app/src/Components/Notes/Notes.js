@@ -21,6 +21,7 @@ const INITIAL_NOTES = [
 const Notes = () => {
   // console.log("Notes.js")
   const [notes, setNotes] = useState(INITIAL_NOTES)
+  const [isOpen, setIsOpen] = useState(false);
 
   const addNewNote = ({title, amount, createdAt}) => {
     const note = {
@@ -29,18 +30,33 @@ const Notes = () => {
       amount,
       createdAt
     }
-    console.log("NEW NOTE - ", note)
     setNotes(prevState => {
       return [...prevState, note]
     })
+    setIsOpen(false)
+  }
+
+  const noteCollection = notes.map(note => <NoteItem note={note} key={note.id}/>)
+
+  const newNoteHandler = () => {
+    setIsOpen(true)
+  }
+  
+  const cancelHandler = () => {
+    setIsOpen(false)
   }
   return (
     <div>
-    <AddNewNote onNewNote={addNewNote} />
+    { !isOpen && <button className="btn btn-secondary" onClick={newNoteHandler}>Add New Note</button>}
+    { isOpen && <AddNewNote onCancel={cancelHandler} onNewNote={addNewNote} />}
+    
+    
+    <br/>
     <div className="row">
-    {notes.map(note =>{ 
+    {/*notes.map(note =>{ 
       return <NoteItem key={note.id} note={note} />
-    })}
+    })*/}
+    {noteCollection}
     </div>
     </div>
   );
