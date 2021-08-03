@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NoteItem from './NoteItem/NoteItem';
 import AddNewNote from './NewNote/AddNewNote';
+import { v4 } from 'uuid';
 
 const INITIAL_NOTES = [
   {
@@ -21,23 +22,25 @@ const Notes = () => {
   // console.log("Notes.js")
   const [notes, setNotes] = useState(INITIAL_NOTES)
 
-  const theParentFunc = (data) => {
-    console.log("[THE PARENT FUNCTION]", data)
-  }
-
-  const addNewNote = note => {
+  const addNewNote = ({title, amount, createdAt}) => {
+    const note = {
+      id : v4(),
+      title,
+      amount,
+      createdAt
+    }
+    console.log("NEW NOTE - ", note)
     setNotes(prevState => {
-      return [note, ...prevState]
+      return [...prevState, note]
     })
   }
   return (
     <div>
     <AddNewNote onNewNote={addNewNote} />
     <div className="row">
-      <NoteItem note={notes[0]} 
-        onCallParent={theParentFunc} />
-      <NoteItem note={notes[1]} 
-        onCallParent={theParentFunc}/>
+    {notes.map(note =>{ 
+      return <NoteItem key={note.id} note={note} />
+    })}
     </div>
     </div>
   );

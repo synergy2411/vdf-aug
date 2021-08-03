@@ -26,6 +26,10 @@ const AddNewNote = (props) => {
     const submitHandler = (event) => {
         event.preventDefault()
         props.onNewNote({title, amount, createdAt : new Date(createdAt)})
+        setTitle("")
+        setAmount("")
+        setCreatedAt("")
+        // props.onNewNote(...state)
     }
     return (
         <div className="row">
