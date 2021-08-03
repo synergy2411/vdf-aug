@@ -1,5 +1,5 @@
 const noteDate = (props) => {
-    console.log("NoteDate.js")
+    // console.log("NoteDate.js")
     const month = props.noteDate.toLocaleString("en-US", { month : "long" })
     const day = props.noteDate.toLocaleString("en-US", {day : "2-digit"})
     const year = props.noteDate.getFullYear();

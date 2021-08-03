@@ -1,8 +1,9 @@
 
 import NoteItem from './NoteItem/NoteItem';
+import AddNewNote from './NewNote/AddNewNote';
 
 const notes = () => {
-  console.log("Notes.js")
+  // console.log("Notes.js")
   const notes = [
     {
       id: 1,
@@ -23,9 +24,14 @@ const notes = () => {
   }
 
   return (
+    <div>
+    <AddNewNote />
     <div className="row">
-      <NoteItem note={notes[0]} onCallParent={theParentFunc} />
-      <NoteItem note={notes[1]} onCallParent={theParentFunc}/>
+      <NoteItem note={notes[0]} 
+        onCallParent={theParentFunc} />
+      <NoteItem note={notes[1]} 
+        onCallParent={theParentFunc}/>
+    </div>
     </div>
   );
 };
