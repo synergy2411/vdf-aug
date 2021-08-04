@@ -21,3 +21,30 @@
 
 # For Props Type Checking
 - npm install prop-types
+
+# Render the UI, react to any event
+- Make Remote Server Call
+- Calculate complex logic
+- Any task for which react is not meant
+
+- useEffect Hook - Functional Component
+
+- useEffect(() =>{}) - Renders very first time on Component load and every time when component re-renders
+
+- useEffect(() => {}, [Dependencies]) -> Renders very first time, but for subsequent re-render depends upon the mentioned [Dependencies].
+
+- useEffect(() => {
+    return () => { // Clean up Code }     - Will executes before component re-renders 
+}, [Dependencies])
+
+
+"Props Soup"
+App -> Notes -> NoteItem -> NoteDate -> Note11 -> Note12 -> Note13
+1. Context API -> "token"
+2. Redux
+
+
+
+
+- Class based component
+
