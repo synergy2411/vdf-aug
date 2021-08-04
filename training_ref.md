@@ -14,3 +14,10 @@
 # To make UI look good -
 - npm cache clean --force
 - npm install bootstrap@4 --save
+
+# For Form Validation - 
+- npm install react-hook-form
+- npm install @hookform/resolvers yup
+
+# For Props Type Checking
+- npm install prop-types
