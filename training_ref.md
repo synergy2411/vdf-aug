@@ -45,6 +45,21 @@ App -> Notes -> NoteItem -> NoteDate -> Note11 -> Note12 -> Note13
 
 
 
+- Functional Component | Presentational | Stateless | Dump (useState())
+- Class based component | Container | Stateful | Smart | 
+- LifeCycle
+    - componentDidMount - useEffect(() => {}, [])
+    - componentDidUpdate - useEffect(() => {}, [DEPENDECIES])
+    - shouldComponentUpdate - useEffect(() => {}, [DEPENDECIES])
+    - ComponentWillUnmount - useEffect(() => { return () => {}})
+    - 
+- HOC - Comp (Comp)
+- Error Boundry
+- Routing > npm install react-router-dom
+- Redux - intro
 
-- Class based component
-
+tomorrow - 
+- React-redux
+- deployment
+- React with TypeScript
+- FAQ
