@@ -56,6 +56,19 @@ App -> Notes -> NoteItem -> NoteDate -> Note11 -> Note12 -> Note13
 - HOC - Comp (Comp)
 - Error Boundry
 - Routing > npm install react-router-dom
+    - Links
+    - Route
+    - useParams() - get the route parameter supplied in URL
+    - useHistory() - able to navigate the user programmatically
+    - useLocation() - snapshot of URL
+    - Route Parameter
+    - Query Parameter
+    - Nested Routing
+
+
+
+
+
 - Redux - intro
 
 tomorrow - 

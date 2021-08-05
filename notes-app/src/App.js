@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Products from "./pages/Products";
+import Header from "./Components/Header/Header";
+import ProductDetail from "./pages/ProductDetail";
 
 // import ClassBased from './Components/Playground/ClassBased/ClassBasedComp';
 // import ErrorBoundary from './Components/Playground/ClassBased/ErrorBoundary';
@@ -16,15 +18,21 @@ import Products from "./pages/Products";
 function App() {
   return (
     <div className="container">
-    <Route path="/" exact>
-      <Redirect to="/welcome" />
-    </Route>
-      <Route path="/products">
-        <Products />
-      </Route>
-      <Route path="/welcome">
-        <Welcome />
-      </Route>
+      <Header />
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/welcome" />
+        </Route>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/products" exact>
+          <Products />
+        </Route>
+        <Route path="/products/:productId">
+        <ProductDetail />
+        </Route>
+      </Switch>
     </div>
   );
 }
@@ -33,7 +41,6 @@ export default App;
 
 // our-domain.com/welcome
 // our-domain.com/products
-
 
 // <ErrorBoundary>
 //       <ClassBased />
