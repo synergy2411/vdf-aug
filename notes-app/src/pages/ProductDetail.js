@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, Link } from 'react-router-dom';
 
 const ProductDetail = () => {
     const params = useParams();
@@ -11,8 +11,8 @@ const ProductDetail = () => {
     console.log(params)
     return (
         <div>
-            Product Details - {params.productId}
-            
+            Product Details - {params.productId}<br />
+            <Link to="/products/2?name=galaxy">Change Route</Link>
         </div>
     );
 }

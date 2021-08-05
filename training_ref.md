@@ -65,11 +65,19 @@ App -> Notes -> NoteItem -> NoteDate -> Note11 -> Note12 -> Note13
     - Query Parameter
     - Nested Routing
 
-
-
-
-
 - Redux - intro
+
+const [counter, setCounter] = useState(0)
+<!-- To read  -->
+counter = 0
+<!-- Modify the state-->
+setCounter(2)
+counter = 2
+
+
+
+
+
 
 tomorrow - 
 - React-redux

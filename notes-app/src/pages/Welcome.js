@@ -4,7 +4,7 @@ import { Route, useHistory } from 'react-router-dom';
 const Welcome = () => {
     const history = useHistory();
     const navigationHandler = () => {
-        history.push("/products")
+        history.push("/products",)
     }
     return (
         <div>
