@@ -18,3 +18,11 @@ export function onSubtractNumber(value){
         value
     }
 }
+
+export function asyncAddNumber(value){
+    return function(dispatch) {
+        setTimeout(() => {
+            dispatch(onAddNumber(value))
+        }, 3000)
+    }
+}

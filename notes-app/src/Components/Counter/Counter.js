@@ -17,6 +17,8 @@ const Counter = (props) => {
                 onClick={props.onDecrease}>Decrease</button>
             <button className="btn btn-secondary" 
                 onClick={()=>props.onAdd(5)}>Add(5)</button>
+            <button className="btn btn-secondary" 
+                onClick={()=>props.onAsyncAdd(10)}>Async Add(10)</button>
             <button className="btn btn-dark" 
                 onClick={() => props.onSubtract(8)}>Subtract(8)</button>
                 <br/><hr/>
@@ -45,7 +47,8 @@ const mapDispatchToProps = (dispatch) => {
         onAdd : (value) => dispatch(counterActions.onAddNumber(value)),
         onSubtract : value => dispatch(counterActions.onSubtractNumber(value)),
         onStoreResult : ctr => dispatch(resultActions.onStoreResult(ctr)),
-        onDeleteResult : idx => dispatch(resultActions.onDeleteResult(idx))
+        onDeleteResult : idx => dispatch(resultActions.onDeleteResult(idx)),
+        onAsyncAdd : value => dispatch(counterActions.asyncAddNumber(value))
     }
 }
 
