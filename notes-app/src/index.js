@@ -7,10 +7,17 @@ import Counter from "./Components/Counter/Counter";
 import './index.css';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from "./store/root.reducer";
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+// import rootReducer from "./store/root.reducer";
+import counterReducer from "./store/reducers/counter.reducer";
+import resultReducer from "./store/reducers/result.reducer";
+import logger from "./store/middleware/logger";
 
-const store = createStore(rootReducer)
+
+const store = createStore(combineReducers({
+  ctr : counterReducer,
+  res : resultReducer
+}), applyMiddleware(logger))
 
 ReactDOM.render(
   <Provider store={store}>
@@ -25,3 +32,8 @@ ReactDOM.render(
 //       <App />
 //     </React.StrictMode>
 //   </Router>
+
+// store -> counter
+              // - actions | reducers
+// store -> result
+              // - actions | reducers

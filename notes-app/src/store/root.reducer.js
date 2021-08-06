@@ -23,6 +23,12 @@ function rootReducer(state = initialState, action){
             ...state,
             result : [...state.result, action.counter]
         }
+        case fromActions.DELETE_RESULT: {
+            const duplicateResult = state.result.filter((item, index)=>{return index !== action.index})
+            return {
+            ...state,
+            result : duplicateResult
+        }}
         default: return state;
     }
 }

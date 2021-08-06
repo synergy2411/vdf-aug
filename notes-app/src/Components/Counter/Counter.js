@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as fromActions from '../../store/root.actions'
+import * as counterActions from "../../store/actions/counter.actions";
+import * as resultActions from "../../store/actions/result.actions";
+
+import "./Counter.css";
 
 const Counter = (props) => {
     // const addHandler = () => { props.onAdd(5) }
-    console.log("Props - ", props);
+    // console.log("Props - ", props);
     return (
         <div className="container">
             <h4>Counter : {props.counter} </h4>
@@ -22,7 +25,7 @@ const Counter = (props) => {
             <br/>
             <ul className="list-group">
             {props.result.map((item, index) => {
-                return <li className="list-group-item" key={index}>{item}</li>}
+                return <li onClick={() => props.onDeleteResult(index)} className="list-group-item" key={index}>{item}</li>}
                 )}
             </ul>
         </div>
@@ -31,17 +34,18 @@ const Counter = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        counter : state.counter,
-        result : state.result
+        counter : state.ctr.counter,
+        result : state.res.result
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onIncrease : () => dispatch({type : fromActions.INCREMENT}),
-        onDecrease : () => dispatch({type : fromActions.DECREMENT}),
-        onAdd : (value) => dispatch(fromActions.onAddNumber(value)),
-        onSubtract : value => dispatch(fromActions.onSubtractNumber(value)),
-        onStoreResult : ctr => dispatch(fromActions.onStoreResult(ctr))
+        onIncrease : () => dispatch({type : counterActions.INCREMENT}),
+        onDecrease : () => dispatch({type : counterActions.DECREMENT}),
+        onAdd : (value) => dispatch(counterActions.onAddNumber(value)),
+        onSubtract : value => dispatch(counterActions.onSubtractNumber(value)),
+        onStoreResult : ctr => dispatch(resultActions.onStoreResult(ctr)),
+        onDeleteResult : idx => dispatch(resultActions.onDeleteResult(idx))
     }
 }
 
