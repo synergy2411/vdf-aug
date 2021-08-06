@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/Components/Counter/Counter.css"],"names":[],"mappings":"AAAA,YACI,cAAe,CACf,wBACJ","file":"3.87d93751.chunk.css","sourcesContent":["ul li:hover {\r\n    cursor: pointer;\r\n    background-color: antiquewhite;\r\n}"]}
