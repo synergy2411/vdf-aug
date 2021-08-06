@@ -79,8 +79,9 @@ counter = 2
 
 
 
-tomorrow - 
 - React-redux
+    > npm install redux react-redux
+
 - deployment
 - React with TypeScript
 - FAQ
