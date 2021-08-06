@@ -81,7 +81,14 @@ counter = 2
 
 - React-redux
     > npm install redux react-redux
+    > npm install redux-thunk
 
 - deployment
+    > npm install firebase-tools -g
+    > firebase login
+    > firebase init
+    > firebase deploy
+
 - React with TypeScript
+    > npx create-react-app my-ts-app --template typescript
 - FAQ
